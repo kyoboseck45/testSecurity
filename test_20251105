@@ -1,0 +1,26 @@
+import openai
+
+.
+api_key = "YOUR_API_KEY_HERE"
+
+.
+openai.api_key = api_key
+
+.
+response = openai.ChatCompletion.create(
+    model="gpt-5",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello, who won the world cup in 2018?"}
+    ]
+)
+
+.
+print(response.choices[0].message['content'])
+
+.
+.
+.
+print("API call successful.")
+print("Response:", response)
+print("Model used:", response)
